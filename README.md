@@ -3,53 +3,22 @@ Convenience repository holding external libraries needed to run CLIMBER-X.
 
 ## Configure and compile each library
 
-Note that the `./configure` commands below use additional options for specifying the compiler etc. that are only valid for systems with the `ifx` compiler. For compiling with `gfortran` on a local system, these extra options can be omitted.
+For a typical local system using a `gcc/gfortran` compiler, all libraries
+can be installed simply by running the included `install.sh` script. This
+will configure and compile the following:
 
 ```bash
-
-### FFTW ###
-
-FFTWSRC=fftw-3.3.10
-
-# with omp enabled
-cd $FFTWSRC
-./configure --prefix=$PWD/../exlib/fftw-omp --enable-openmp CC=icx F77=ifx 'FFLAGS=-Ofast -march=core-avx2 -mtune=core-avx2 -traceback' 'CFLAGS=-Ofast -march=core-avx2 -mtune=core-avx2 -traceback'
-make
-make install
-cd ../
-
-# serial (without omp) 
-./configure --prefix=$PWD/../exlib/fftw-serial --enable-openmp CC=icx F77=ifx 'FFLAGS=-Ofast -march=core-avx2 -mtune=core-avx2 -traceback' 'CFLAGS=-Ofast -march=core-avx2 -mtune=core-avx2 -traceback'
-make
-make install
-cd ../
-
-### LIS ###
-
-# Only relevant to PIK-HPC2024: error when compiling with most recent intel OneAPI 2024.0
-module load intel/oneAPI/2023.2.0
-
-LISSRC=lis-2.1.6
-
-# with omp enabled
-cd $LISSRC
-./configure --prefix=$PWD/../exlib/lis-omp --enable-omp --enable-f90 CC=icc FC=ifort 'FFLAGS=-Ofast -march=core-avx2 -mtune=core-avx2 -traceback' 'CFLAGS=-Ofast -march=core-avx2 -mtune=core-avx2 -traceback'
-make
-make install
-cd ../
-
-# serial (without omp) 
-cd $LISSRC
-make clean
-./configure --prefix=$PWD/../exlib/lis-serial --enable-f90 CC=icc FC=ifort 'FFLAGS=-Ofast -march=core-avx2 -mtune=core-avx2 -traceback' 'CFLAGS=-Ofast -march=core-avx2 -mtune=core-avx2 -traceback'
-make
-make install
-cd ../
-
-# Only relevant to PIK-HPC2024: to revert previous change
-module load intel/oneAPI/2024.0.0
-
+exlib/fftw-omp
+exlib/fftw-serial
+exlib/lis-omp
+exlib/lis-serial
 ```
+
+Some specific install scripts are available for HPC systems.
+
+`install_pik_hpc.sh` : PIK HPC2024 (Foote) system
+
+## Use the libraries
 
 Now a symlink can be made to these libraries for use within CLIMBER-X:
 
