@@ -1,4 +1,4 @@
-# climber-x-exlibs
+# climber-x-exlib
 Convenience repository holding external libraries needed to run CLIMBER-X.
 
 ## Configure and compile each library
