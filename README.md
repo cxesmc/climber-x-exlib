@@ -53,7 +53,7 @@ Now a symlink can be made to these libraries for use within CLIMBER-X:
 
 ```bash
 cd climber-x/utils
-ln -s /path/to/exlib
+ln -s /path/to/climber-x-exlib/exlib
 ```
 
 
