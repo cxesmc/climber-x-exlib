@@ -11,10 +11,9 @@ if [[ $1 = "ifx" ]]; then
 fi
 
 echo "COMPILER_OPTS = $COMPILER_OPTS"
-exit 0
+echo ""
 
-
-
+# Define the root source directory
 SRCDIR=$PWD
 
 ### FFTW ###
@@ -39,6 +38,10 @@ cd $SRCDIR
 
 ### LIS ###
 
+if [[ $2 = "pik" ]]; then
+    module load intel/oneAPI/2023.2.0 #(error when compiling with most recent intel OneAPI 2024.0)
+fi
+
 LISSRC=lis-2.1.6
 
 # with omp enabled
@@ -56,6 +59,11 @@ make clean
 make
 make install
 cd $SRCDIR
+
+
+if [[ $2 = "pik" ]]; then
+    module load intel/oneAPI/2024.0.0 #(to revert previous change)
+fi
 
 echo ""
 echo "" 
