@@ -11,13 +11,13 @@ FFTWSRC=fftw-3.3.10
 
 # with omp enabled
 cd $FFTWSRC
-./configure --prefix=$PWD/../fftw-omp --enable-openmp CC=icx F77=ifx 'FFLAGS=-Ofast -march=core-avx2 -mtune=core-avx2 -traceback' 'CFLAGS=-Ofast -march=core-avx2 -mtune=core-avx2 -traceback'
+./configure --prefix=$PWD/../exlib/fftw-omp --enable-openmp CC=icx F77=ifx 'FFLAGS=-Ofast -march=core-avx2 -mtune=core-avx2 -traceback' 'CFLAGS=-Ofast -march=core-avx2 -mtune=core-avx2 -traceback'
 make
 make install
 cd ../
 
 # serial (without omp) 
-./configure --prefix=$PWD/../fftw-serial --enable-openmp CC=icx F77=ifx 'FFLAGS=-Ofast -march=core-avx2 -mtune=core-avx2 -traceback' 'CFLAGS=-Ofast -march=core-avx2 -mtune=core-avx2 -traceback'
+./configure --prefix=$PWD/../exlib/fftw-serial --enable-openmp CC=icx F77=ifx 'FFLAGS=-Ofast -march=core-avx2 -mtune=core-avx2 -traceback' 'CFLAGS=-Ofast -march=core-avx2 -mtune=core-avx2 -traceback'
 make
 make install
 cd ../
@@ -31,7 +31,7 @@ LISSRC=lis-2.1.6
 
 # with omp enabled
 cd $LISSRC
-./configure --prefix=$PWD/../lis-omp --enable-omp --enable-f90 CC=icc FC=ifort 'FFLAGS=-Ofast -march=core-avx2 -mtune=core-avx2 -traceback' 'CFLAGS=-Ofast -march=core-avx2 -mtune=core-avx2 -traceback'
+./configure --prefix=$PWD/../exlib/lis-omp --enable-omp --enable-f90 CC=icc FC=ifort 'FFLAGS=-Ofast -march=core-avx2 -mtune=core-avx2 -traceback' 'CFLAGS=-Ofast -march=core-avx2 -mtune=core-avx2 -traceback'
 make
 make install
 cd ../
@@ -39,7 +39,7 @@ cd ../
 # serial (without omp) 
 cd $LISSRC
 make clean
-./configure --prefix=$PWD/../lis-serial --enable-f90 CC=icc FC=ifort 'FFLAGS=-Ofast -march=core-avx2 -mtune=core-avx2 -traceback' 'CFLAGS=-Ofast -march=core-avx2 -mtune=core-avx2 -traceback'
+./configure --prefix=$PWD/../exlib/lis-serial --enable-f90 CC=icc FC=ifort 'FFLAGS=-Ofast -march=core-avx2 -mtune=core-avx2 -traceback' 'CFLAGS=-Ofast -march=core-avx2 -mtune=core-avx2 -traceback'
 make
 make install
 cd ../
@@ -53,10 +53,7 @@ Now a symlink can be made to these libraries for use within CLIMBER-X:
 
 ```bash
 cd climber-x/utils
-ln -s /path/to/fftw-serial
-ln -s /path/to/fftw-omp
-ln -s /path/to/lis-serial
-ln -s /path/to/lis-omp
+ln -s /path/to/exlib
 ```
 
 
