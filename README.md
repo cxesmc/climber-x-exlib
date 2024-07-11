@@ -61,6 +61,9 @@ ln -s /path/to/exlib
 
 ## To get the original libraries
 
+This step is mainly only relevant for the maintainers of this repository,
+or in the case that a user wants to try out different versions.
+
 ```bash
 ### FFTW
 wget https://www.fftw.org/fftw-3.3.10.tar.gz
