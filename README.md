@@ -3,9 +3,28 @@ Convenience repository holding external libraries needed to run CLIMBER-X.
 
 ## Configure and compile each library
 
-For a typical local system using a `gcc/gfortran` compiler, all libraries
-can be installed simply by running the included `install.sh` script. This
-will configure and compile the following:
+
+To compile with your default compiler (most likely gcc/gfortran) run:
+
+```bash
+./install.sh
+```
+
+To compile with an `ifx` compiler, run with argument `ifx`:
+
+```bash
+./install.sh ifx
+```
+
+Specifically to deal with an issue on the PIK HPC2024 (Foote) cluster,
+run additionally with the suffix `pik`:
+
+```bash
+./install.sh pik
+```
+
+Running the `install.sh` script will compile and "install" the following
+library versions:
 
 ```bash
 exlib/fftw-omp
@@ -14,9 +33,8 @@ exlib/lis-omp
 exlib/lis-serial
 ```
 
-Some specific install scripts are available for HPC systems.
-
-`install_pik_hpc.sh` : PIK HPC2024 (Foote) system
+See the internals of `install.sh` if you would like to customize any
+installation options further.
 
 ## Use the libraries
 
