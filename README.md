@@ -3,6 +3,8 @@ Convenience repository holding external libraries needed to run CLIMBER-X.
 
 ## Configure and compile each library
 
+Note that the `./configure` commands below use additional options for specifying the compiler etc. that are only valid for systems with the `ifx` compiler. For compiling with `gfortran` on a local system, these extra options can be omitted.
+
 ```bash
 
 ### FFTW ###
