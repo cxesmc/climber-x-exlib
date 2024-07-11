@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# Make sure we stop on errors
+set -e 
 
 COMPILER_OPTS_DEFAULT=""
 COMPILER_OPTS_IFX="CC=icx F77=ifx 'FFLAGS=-Ofast -march=core-avx2 -mtune=core-avx2 -traceback' 'CFLAGS=-Ofast -march=core-avx2 -mtune=core-avx2 -traceback'"
