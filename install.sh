@@ -24,7 +24,7 @@ FFTWSRC=fftw-3.3.10
 
 # with omp enabled
 cd $FFTWSRC
-eval "./configure --prefix=$SRCDIR/exlib/fftw-omp --enable-openmp $COMPILER_OPTS"
+eval "./configure --disable-doc --prefix=$SRCDIR/exlib/fftw-omp --enable-openmp $COMPILER_OPTS"
 make clean
 make
 make install
@@ -32,7 +32,7 @@ cd $SRCDIR
 
 # serial (without omp) 
 cd $FFTWSRC
-eval "./configure --prefix=$SRCDIR/exlib/fftw-serial $COMPILER_OPTS"
+eval "./configure --disable-doc --prefix=$SRCDIR/exlib/fftw-serial $COMPILER_OPTS"
 make clean
 make
 make install
