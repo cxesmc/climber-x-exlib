@@ -15,11 +15,9 @@ fi
 echo "COMPILER_OPTS = $COMPILER_OPTS"
 echo ""
 
-# Define the root source directory
-SRCDIR=$PWD
-
 ### FFTW ###
 
+SRCDIR=$PWD
 FFTWSRC=fftw-3.3.10
 
 # with omp enabled
@@ -44,6 +42,7 @@ if [[ $2 = "pik" ]]; then
     module load intel/oneAPI/2023.2.0 #(error when compiling with most recent intel OneAPI 2024.0)
 fi
 
+SRCDIR=$PWD
 LISSRC=lis-2.1.6
 
 # with omp enabled
