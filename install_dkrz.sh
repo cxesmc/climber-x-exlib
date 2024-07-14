@@ -34,6 +34,7 @@ eval "./configure --disable-doc --prefix=$SRCDIR/exlib/fftw-serial $COMPILER_OPT
 make clean
 make
 make install
+cd $SRCDIR
 
 ### LIS ###
 
