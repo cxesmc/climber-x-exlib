@@ -1,8 +1,8 @@
 # climber-x-exlib
+
 Convenience repository holding external libraries needed to run CLIMBER-X.
 
 ## Configure and compile each library
-
 
 To compile with your default compiler (most likely gcc/gfortran) run:
 
@@ -45,9 +45,6 @@ Now a symlink can be made to these libraries for use within CLIMBER-X:
 cd climber-x/utils
 ln -s /path/to/climber-x-exlib/exlib
 ```
-
-
-
 
 ## To get the original libraries
 
