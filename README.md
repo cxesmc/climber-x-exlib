@@ -10,17 +10,18 @@ To compile with your default compiler (most likely gcc/gfortran) run:
 ./install.sh
 ```
 
-To compile with an `ifx` compiler, run with argument `ifx`:
+To compile with an `ifx` or `ifort` compiler, run with argument `ifx` or `ifort`:
 
 ```bash
 ./install.sh ifx
+./install.sh ifort
 ```
 
 Specifically to deal with an issue on the PIK HPC2024 (Foote) cluster,
-run additionally with the suffix `pik`:
+run the PIK specific script:
 
 ```bash
-./install.sh pik
+./install_pik.sh ifx
 ```
 
 Running the `install.sh` script will compile and "install" the following

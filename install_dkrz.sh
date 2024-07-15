@@ -1,5 +1,8 @@
 #!/bin/bash
 
+## This script will work on the DKRZ levante system, and 
+## the AWI albedo system. 
+
 # Make sure we stop on errors
 set -e 
 
