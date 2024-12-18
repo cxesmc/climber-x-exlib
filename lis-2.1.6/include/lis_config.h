@@ -7,10 +7,10 @@
 
 /* Define to a macro mangling the given C identifier (in lower and upper
    case), which must not contain underscores, for linking with Fortran. */
-/* #undef F77_FUNC */
+#define F77_FUNC(name,NAME) name ## _
 
 /* As F77_FUNC, but for C identifiers containing underscores. */
-/* #undef F77_FUNC_ */
+#define F77_FUNC_(name,NAME) name ## _
 
 /* Define if F77 and FC dummy 'main' functions are identical. */
 /* #undef FC_DUMMY_MAIN_EQ_F77 */
@@ -19,7 +19,7 @@
 /* #undef HAS_FMA */
 
 /* Define to 1 to enable x87 FPU. */
-#define HAS_X87_FPU 1
+/* #undef HAS_X87_FPU */
 
 /* Define to 1 if you have the <complex.h> header file. */
 #define HAVE_COMPLEX_H 1
@@ -31,7 +31,7 @@
 #define HAVE_INTTYPES_H 1
 
 /* Define to 1 if you have the <malloc.h> header file. */
-#define HAVE_MALLOC_H 1
+/* #undef HAVE_MALLOC_H */
 
 /* Define to 1 if you have the <quadmath.h> header file. */
 #define HAVE_QUADMATH_H 1
@@ -100,7 +100,7 @@
 #define SIZEOF_LONG 8
 
 /* Test the size of a `__float128', as computed by sizeof. */
-#define SIZEOF_LONG_DOUBLE 16
+#define SIZEOF_LONG_DOUBLE 8
 
 /* Test the size of a `long long', as computed by sizeof. */
 #define SIZEOF_LONG_LONG 8
@@ -129,7 +129,7 @@
 /* #undef USE_FMA2_SSE2 */
 
 /* Define to 1 to enable Fortran subroutines. */
-/* #undef USE_FORTRAN */
+#define USE_FORTRAN 1
 
 /* Use MAIN__ macro with Fortran. */
 /* #undef USE_MAIN__ */
